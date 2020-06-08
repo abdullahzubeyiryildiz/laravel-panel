@@ -2,6 +2,8 @@
 
 Laravel Panel
 
+- Panel Login İşlemi
+- Panel Erişim Güvenliği
 - Ürün Ekleme
 - Ürün Güncelleme
 - Ürün Yumuşak Silme
