@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 08 Haz 2020, 13:54:18
+-- Üretim Zamanı: 08 Haz 2020, 15:51:51
 -- Sunucu sürümü: 10.1.37-MariaDB
 -- PHP Sürümü: 7.3.0
 
@@ -68,7 +68,7 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Genel', 'genel', 1, '2020-06-07 22:23:45', '2020-06-07 22:24:35', NULL),
-(2, 'Kategori 1', 'kategori-1', 1, '2020-06-07 22:23:45', '2020-06-07 22:24:36', NULL),
+(2, 'Kategori 1', 'kategori-1', 1, '2020-06-07 22:23:45', '2020-06-08 09:15:11', NULL),
 (3, 'Kategori 2', 'kategori-2', 1, '2020-06-07 22:23:45', '2020-06-07 22:23:45', NULL),
 (4, 'Kategori 3', 'kategori-3', 1, '2020-06-07 22:23:45', '2020-06-07 22:23:45', NULL),
 (5, 'Kategori 4', 'kategori-4', 1, '2020-06-07 22:23:45', '2020-06-07 22:23:45', NULL);
@@ -170,7 +170,8 @@ INSERT INTO `products` (`id`, `category_id`, `name`, `image`, `content`, `status
 (8, 2, 'Miss Larissa Parisian', 'https://lorempixel.com/800/400/cats/?19722', 'Nulla rerum dolorem quaerat blanditiis quia impedit dolores. Eos soluta cumque vel non minus distinctio veniam. Dolor voluptatem impedit dolore odit aperiam quo impedit. Ratione fugit sit et consequatur.', 1, 'prof-adriel-mccullough', NULL, '2018-11-07 14:36:43', '2020-06-07 22:24:18'),
 (9, 5, 'Sage Langosh', 'https://lorempixel.com/800/400/cats/?24102', 'Aliquam ipsam qui qui harum unde perferendis. Qui est optio deleniti perspiciatis. Rem qui vero hic mollitia voluptatum laboriosam et. At voluptatum exercitationem qui ut dolores. Consequatur occaecati nulla vel voluptatem molestiae quod iusto. Sit voluptatem cum aperiam temporibus ipsum. Et corrupti illum corporis vel. Aut aperiam voluptatem iste est et aut molestiae.', 1, 'pattie-marquardt', NULL, '2012-10-21 07:42:56', '2020-06-07 22:24:20'),
 (10, 2, 'Herta Hermiston', 'https://lorempixel.com/800/400/cats/?50008', 'Id distinctio omnis deserunt voluptatem odit. Qui optio nemo reiciendis velit. Perspiciatis vel molestiae illum minus minima eum doloribus quod. Doloremque voluptates illum ea sint totam eum voluptatem cumque. Error quo impedit ut pariatur.', 1, 'brandy-beer-dvm', NULL, '1996-12-15 04:05:28', '2020-06-07 22:23:46'),
-(11, NULL, 'Deneme Ürün', 'uploads/deneme-urun.png', 'test', 1, 'deneme-urun', NULL, '2020-06-07 22:23:54', '2020-06-07 22:24:17');
+(11, NULL, 'Deneme Ürün', 'uploads/deneme-urun.png', 'test', 1, 'deneme-urun', NULL, '2020-06-07 22:23:54', '2020-06-07 22:24:17'),
+(12, 3, 'Deneme Ürünsada', 'uploads/deneme-urunsada.png', 'asdad', 1, 'deneme-urunsada', NULL, '2020-06-08 10:49:52', '2020-06-08 10:51:03');
 
 -- --------------------------------------------------------
 
@@ -281,7 +282,7 @@ ALTER TABLE `migrations`
 -- Tablo için AUTO_INCREMENT değeri `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`
