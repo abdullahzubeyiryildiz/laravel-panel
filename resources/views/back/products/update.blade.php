@@ -20,6 +20,15 @@
              <form action="{{route('admin.urunler.update',$product->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
+                <div class="form-group">
+                  <label>Kategori</label>
+                  <select class="form-control" name="category" required>
+                      <option value="">Seçim Yapınız</option>
+                      @foreach($categories as $category)
+                        <option @if($product->category_id==$category->id) selected @endif  value="{{$category->id}}">{{$category->name}}</option>
+                      @endforeach
+                  </select>
+              </div>
                  <div class="form-group">
                     <label>Ürün Adı</label>
                  <input type="text" name="name" value="{{$product->name}}" class="form-control" required>

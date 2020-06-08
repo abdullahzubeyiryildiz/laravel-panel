@@ -19,7 +19,15 @@
               @endif
              <form action="{{route('admin.urunler.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-
+                <div class="form-group">
+                  <label>Kategori</label>
+                  <select class="form-control" name="category" required>
+                      <option value="">Seçim Yapınız</option>
+                      @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                      @endforeach
+                  </select>
+              </div>
                 
                  <div class="form-group">
                     <label>Ürün Adı</label>

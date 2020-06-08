@@ -30,8 +30,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        
-        return view('back.products.create');
+      $categories=Category::all();
+      return view('back.products.create',compact('categories'));
     }
 
     /**
@@ -49,6 +49,7 @@ class ProductController extends Controller
         
        $product=new Product;
        $product->name=$request->name;
+       $product->category_id=$request->category;
        $product->content=$request->content;
        $slug = Str::slug($request->name, '-');
        $product->slug=$slug;
@@ -83,9 +84,12 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+      
         $product=Product::findOrFail($id);
+        $categories=Category::all();
         //dd($product);
-        return view('back.products.update',compact('product'));
+        return view('back.products.update',compact('categories','product'));
+
 
     }
 
@@ -105,6 +109,7 @@ class ProductController extends Controller
         
        $product= Product::findOrFail($id);
        $product->name=$request->name;
+       $product->category_id=$request->category;
        $product->content=$request->content;
        $slug = Str::slug($request->name, '-');
        $product->slug=$slug;
