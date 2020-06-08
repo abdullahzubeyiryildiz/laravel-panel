@@ -30,15 +30,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Çıkış Yapmak İstediğinizden Eminmisiniz?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Güvenli çıkış yapmak mı istiyorsun?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">İptal</button>
+          <a class="btn btn-primary" href="{{route('admin.logout')}}">Çıkış Yap</a>
         </div>
       </div>
     </div>
@@ -61,6 +61,58 @@
   <script src="{{asset('back/')}}/js/demo/chart-area-demo.js"></script>
   <script src="{{asset('back/')}}/js/demo/chart-pie-demo.js"></script>
 
+
+  <script src="{{asset('back/')}}/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="{{asset('back/')}}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="{{asset('back/')}}/js/demo/datatables-demo.js"></script>
+
+@yield('js')
+
+<script>
+  $(document).ready( function () {
+  
+$('#tablo').dataTable({
+  "responsive": true,
+      "dom": '<"html5buttons"B>lTfgitp',
+      "language": {
+          "emptyTable": "Gösterilecek ver yok.",
+          "processing": "Veriler yükleniyor",
+          "sDecimal": ".",
+          "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
+          "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
+          "sInfoPostFix": "",
+          "sInfoThousands": ".",
+          "sLengthMenu": "Sayfada _MENU_ kayıt göster",
+          "sLoadingRecords": "Yükleniyor...",
+          "sSearch": "Ara:",
+          "sZeroRecords": "Eşleşen kayıt bulunamadı",
+          "oPaginate": {
+              "sFirst": "İlk",
+              "sLast": "Son",
+              "sNext": "Sonraki",
+              "sPrevious": "Önceki"
+          },
+          "oAria": {
+              "sSortAscending": ": artan sütun sıralamasını aktifleştir",
+              "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+          },
+          "select": {
+              "rows": {
+                  "_": "%d kayıt seçildi",
+                  "0": "",
+                  "1": "1 kayıt seçildi"
+              }
+          }
+      }
+});
+});
+
+</script>
+
+@toastr_js
+@toastr_render
 </body>
 
 </html>

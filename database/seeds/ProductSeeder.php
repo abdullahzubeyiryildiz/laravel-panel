@@ -28,10 +28,10 @@ class ProductSeeder extends Seeder
 
         $faker=Faker::create();
         for($i=0;$i<10;$i++){
-            $title=$faker->name;
-            $slug = Str::slug($title, '-');
+            $slug = Str::slug($faker->name, '-');
           DB::table('products')->insert([
-            'name'=>$title,
+            'name'=>$faker->name,
+            'category_id'=>rand(1,7),
             'image'=>$faker->imageUrl(800, 400, 'cats', true),
             'content'=>$faker->paragraph(6),
             'slug'=>$slug,
