@@ -13,5 +13,9 @@ Laravel Panel
 - Kategori Ekleme
 - Kategori Düzenleme için Modul Açma
 - Kategori Açılan Moduli Ajax ile Düzenleme
+- Kategoride Genel Kategori ye sabit kategori belirleme
+- Kategori Silme
+- Kategoride silinen kategorinin verilerini boşa düşmesin diye genel kategoriye taşınması.
+- Toastr.js Alert Çıkartılması.
 
 
